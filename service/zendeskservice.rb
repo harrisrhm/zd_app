@@ -1,6 +1,7 @@
 require "json"
 require "zendesk_api"
 require "open-uri"
+require "date"
 require_relative "../lib/ticket"
 
 class ZendeskService
@@ -15,17 +16,13 @@ class ZendeskService
         requester = ticket["requester_id"].to_i
         subject = ticket["subject"]
         description = ticket["description"]
-        # created_date = ticket["created_at"]
-        # created_time = ticket["created_at"]
-        created_date = ticket["created_at"].strftime("%d %B %Y")
-        created_time = ticket["created_at"].strftime("%H:%M%p")
+        created_date = ticket["created_at"]
+        created_time = ticket["created_at"]
+        # created_date = ticket["created_at"].strftime("%d %B %Y")
+        # created_time = ticket["created_at"].strftime("%H:%M%p")
         status = ticket["status"]
         results << Ticket.new(ticket_id: ticket_id, requester: requester, subject: subject, description: description, created_date: created_date, created_time: created_time, status: status)
       end
       return results
     end
 end
-
-# new = ZendeskService.new
-# main = new.get_client
-# puts main

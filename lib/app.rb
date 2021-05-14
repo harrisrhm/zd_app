@@ -7,4 +7,5 @@ controller = Controller.new(zendeskservice)
 
 router = Router.new(controller)
 
+# Start the app
 router.run
