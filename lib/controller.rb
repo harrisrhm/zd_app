@@ -5,6 +5,7 @@ require_relative "../service/zendeskservice"
 class Controller
     def initialize(zendeskservice)
         @zendeskservice = zendeskservice
+        @zendeskservice = ZendeskService.new
         @view = View.new
     end
 
@@ -15,7 +16,7 @@ class Controller
     private 
 
     def display_tickets
-        tickets = @zendeskservice.get_client
+        tickets = @zendeskservice.transform
         @view.display(tickets)
     end
 
