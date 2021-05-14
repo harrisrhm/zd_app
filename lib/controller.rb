@@ -15,7 +15,7 @@ class Controller
     private 
 
     def display_tickets
-        tickets = @zendeskservice.result
+        tickets = @zendeskservice.get_client
         @view.display(tickets)
     end
 

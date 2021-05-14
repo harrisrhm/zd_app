@@ -2,8 +2,10 @@ require "json"
 require "zendesk_api"
 require_relative "../lib/ticket"
 
+$global_result = @results
 
 class ZendeskService
+    attr_reader :results
     def initialize
       @client = ZendeskAPI::Client.new do |config|
         config.url = "https://harrisrhm.zendesk.com/api/v2"
