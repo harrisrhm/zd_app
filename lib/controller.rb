@@ -1,6 +1,6 @@
 require_relative "view"
 require_relative "ticket"
-require_relative "../service/test2"
+require_relative "../service/zendeskservice"
 
 class Controller
     def initialize(zendeskservice)
@@ -12,11 +12,10 @@ class Controller
         display_tickets
     end
 
-
     private 
 
     def display_tickets
-        tickets = @zendeskservice.get_client
+        tickets = @zendeskservice.result
         @view.display(tickets)
     end
 
