@@ -21,9 +21,10 @@ class Router
     def route_action(action)
       case action
       when 1 then @controller.list
-      when 2 then stop
+      when 2 then @controller.show
+      when 3 then stop
       else
-        puts "Please press 1 or 2"
+        puts "Please press 1, 2 or 3"
       end
     end
   
@@ -35,7 +36,8 @@ class Router
       puts ""
       puts "What do you want to do next?"
       puts "1 - List all tickets"
-      puts "2 - Stop and exit the program"
+      puts "2 - See individual ticket"
+      puts "3 - Stop and exit the program"
       print "> "
     end
   end

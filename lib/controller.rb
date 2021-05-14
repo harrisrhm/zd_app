@@ -13,6 +13,11 @@ class Controller
         display_tickets
     end
 
+    def show
+        index = @view.ask_user_for_index
+        @ticket.display(index)
+    end
+
     private 
 
     def display_tickets
