@@ -12,8 +12,8 @@ class ZendeskService
     def transform
       results = []
       get_client["tickets"].each do |ticket|
-        ticket_id = ticket["id"].to_i
-        requester = ticket["requester_id"].to_i
+        ticket_id = ticket["id"]
+        requester = ticket["requester_id"]
         subject = ticket["subject"]
         description = ticket["description"]
         created_date = ticket["created_at"]

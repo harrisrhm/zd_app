@@ -14,15 +14,22 @@ class Controller
     end
 
     def show
-        index = @view.ask_user_for_index
-        @ticket.display(index)
+        display_tickets
+        ticket_id = @view.ask_user_for_ticket_id
+        display_one_ticket
+        # @ticket.display(ticket_id)
     end
 
     private 
 
     def display_tickets
         tickets = @zendeskservice.transform
-        @view.display(tickets)
+        @view.display_all(tickets)
+    end
+
+    def display_one_ticket
+        tickets = @zendeskservice.transform
+        @view.display_one(tickets)
     end
 
 end
