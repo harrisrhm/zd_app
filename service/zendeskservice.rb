@@ -1,7 +1,6 @@
 require "json"
-require "zendesk_api"
 require "open-uri"
-require "date"
+require "will_paginate/array"
 require_relative "../lib/ticket"
 
 class ZendeskService
@@ -23,6 +22,7 @@ class ZendeskService
         status = ticket["status"]
         results << Ticket.new(ticket_id: ticket_id, requester: requester, subject: subject, description: description, created_date: created_date, created_time: created_time, status: status)
       end
-      return results
+      page_one = results.paginate(:per_page => 25)
+      return page_one
     end
 end

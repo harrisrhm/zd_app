@@ -1,7 +1,28 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    actionview (6.1.3.2)
+      activesupport (= 6.1.3.2)
+      builder (~> 3.1)
+      erubi (~> 1.4)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    activemodel (6.1.3.2)
+      activesupport (= 6.1.3.2)
+    activerecord (6.1.3.2)
+      activemodel (= 6.1.3.2)
+      activesupport (= 6.1.3.2)
+    activesupport (6.1.3.2)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+      zeitwerk (~> 2.3)
+    builder (3.2.4)
+    concurrent-ruby (1.1.8)
+    crass (1.0.6)
     diff-lcs (1.4.4)
+    erubi (1.10.0)
     faraday (1.4.1)
       faraday-excon (~> 1.1)
       faraday-net_http (~> 1.0)
@@ -12,10 +33,37 @@ GEM
     faraday-net_http (1.0.1)
     faraday-net_http_persistent (1.1.0)
     hashie (4.1.0)
+    i18n (1.8.10)
+      concurrent-ruby (~> 1.0)
     inflection (1.0.0)
+    kaminari (1.2.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
+      actionview
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
+      activerecord
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
+    loofah (2.9.1)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.5.9)
     mini_mime (1.1.0)
+    minitest (5.14.4)
     multipart-post (2.1.1)
+    nokogiri (1.11.4-x86_64-darwin)
+      racc (~> 1.4)
     open-uri (0.1.0)
+    pagy (3.13.0)
+    racc (1.5.2)
+    rails-dom-testing (2.0.3)
+      activesupport (>= 4.2.0)
+      nokogiri (>= 1.6)
+    rails-html-sanitizer (1.3.0)
+      loofah (~> 2.3)
     rake (13.0.3)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
@@ -31,6 +79,10 @@ GEM
       rspec-support (~> 3.10.0)
     rspec-support (3.10.2)
     ruby2_keywords (0.0.4)
+    tzinfo (2.0.4)
+      concurrent-ruby (~> 1.0)
+    will_paginate (3.3.0)
+    zeitwerk (2.4.2)
     zendesk_api (1.29.0)
       faraday (>= 0.9.0, < 2.0.0)
       hashie (>= 3.5.2, < 5.0.0)
@@ -42,9 +94,12 @@ PLATFORMS
   x86_64-darwin-18
 
 DEPENDENCIES
+  kaminari
   open-uri
+  pagy
   rake
   rspec
+  will_paginate
   zendesk_api
 
 BUNDLED WITH
