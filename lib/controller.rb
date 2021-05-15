@@ -23,7 +23,7 @@ class Controller
     private 
 
     def display_tickets
-        tickets = @zendeskservice.transform
+        tickets = @zendeskservice.paginate
         @view.display_all(tickets)
     end
 

@@ -25,4 +25,9 @@ class ZendeskService
       end
       return results
     end
+
+    def paginate
+      paginated_one = transform.paginate(:page => 1, :per_page => 10)
+      paginated_two = transform.paginate(:page => 2, :per_page => 10)
+    end
 end
