@@ -17,7 +17,6 @@ class Controller
         display_tickets
         ticket_id = @view.ask_user_for_ticket_id
         display_one_ticket
-        # @ticket.display(ticket_id)
     end
 
     private 
