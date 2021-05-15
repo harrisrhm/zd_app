@@ -3,11 +3,8 @@ require_relative "ticket"
 require_relative "../service/zendeskservice"
 
 class Controller
-    tickets_size = 25
-
     def initialize(zendeskservice)
         @zendeskservice = zendeskservice
-        @zendeskservice = ZendeskService.new
         @view = View.new
     end
 
@@ -16,7 +13,6 @@ class Controller
     end
 
     def show
-        display_tickets
         display_one_ticket
     end
 

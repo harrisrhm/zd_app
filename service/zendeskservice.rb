@@ -2,6 +2,7 @@ require "json"
 require "open-uri"
 require "will_paginate/array"
 require_relative "../lib/ticket"
+require_relative "../lib/view"
 
 class ZendeskService
     def get_client
@@ -27,7 +28,20 @@ class ZendeskService
     end
 
     def paginate
-      paginated_one = transform.paginate(:page => 1, :per_page => 10)
-      paginated_two = transform.paginate(:page => 2, :per_page => 10)
+        first_tab = "a"
+        second_tab = "b"
+        third_tab = "c"
+        fourth_tab = "d"
+        user_response = View.new().ask_user
+
+        if first_tab == user_response
+          paginated_one = transform.paginate(:page => 1, :per_page => 25)
+        elsif second_tab == user_response
+          paginated_two = transform.paginate(:page => 2, :per_page => 25)
+        elsif third_tab == user_response
+          paginated_three = transform.paginate(:page => 3, :per_page => 25)
+        elsif fourth_tab == user_response
+          paginated_three = transform.paginate(:page => 4, :per_page => 25)
+        end
     end
 end
