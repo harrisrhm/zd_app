@@ -15,7 +15,6 @@ class Controller
 
     def show
         display_tickets
-        ticket_id = @view.ask_user_for_ticket_id
         display_one_ticket
     end
 
@@ -30,5 +29,4 @@ class Controller
         tickets = @zendeskservice.transform
         @view.display_one(tickets)
     end
-
 end
