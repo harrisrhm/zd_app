@@ -28,12 +28,12 @@ class ZendeskService
     end
 
     def paginate
+        user_response = View.new().ask_user
         first_tab = "a"
         second_tab = "b"
         third_tab = "c"
         fourth_tab = "d"
-        user_response = View.new().ask_user
-
+        
         if first_tab == user_response
           paginated_one = transform.paginate(:page => 1, :per_page => 25)
         elsif second_tab == user_response

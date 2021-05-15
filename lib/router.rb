@@ -30,6 +30,7 @@ class Router
   
     def stop
       @running = false
+      puts "Thank you for using Zendesk Ticket Viewer!"
     end
   
     def display_tasks
