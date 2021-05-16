@@ -39,7 +39,7 @@ class View
     end
 
     def ask_user
-      puts "Press 'a' | 'b' | 'c' | 'd' | any key to main menu"
+      puts "Press 'a' | 'b' | 'c' | 'd' | or any key to main menu"
       print "> "
       @answer = gets.chomp.to_s.downcase
     end
