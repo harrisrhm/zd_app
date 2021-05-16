@@ -1,23 +1,19 @@
-begin
-    require 'ticket'
-rescue LoadError
-end
+class TicketHelper
+    def initialize(params = {})
+      @file_name = params[:file_name]
+      @class_name = params[:class_name]
+    end
   
-  class TicketFactory
-    def self.build(ticket_id, requester, subject, description, created_date, created_time, status)
-      if Ticket.allocate.method(:initialize).arity == 7
-        Ticket.new(ticket_id, requester, subject, description, created_date, created_time, status)
-      else
-        attributes = {
-            ticket_id: = ticket_id,
-            requester: = requester,
-            subject: = subject,
-            description: = description,
-            created_date: = created_date,
-            created_time: = created_time,
-            status: = status
-        }
-        Ticket.new(attributes)
-      end
+    def file_exists?
+      File.exists?("#{__dir__}/../lib/#{@file_name}.rb")
+    end
+  
+    def class_defined?
+      Object.const_defined?(@class_name)
+    end
+  
+    def file_and_class_valid?
+      file_exists? && class_defined?
     end
   end
+end
