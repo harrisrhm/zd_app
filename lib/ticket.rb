@@ -10,5 +10,5 @@ class Ticket
       @created_time = attributes[:created_time]
       @status = attributes[:status]
     end
-
+    
 end

@@ -5,11 +5,17 @@ require_relative "../lib/ticket"
 require_relative "../lib/view"
 
 class ZendeskService
+    # request api with basic authorisation
     def get_client
-      url = "https://harrisrhm.zendesk.com/api/v2/tickets.json"
-      clients_hash = JSON.parse(open(url, :http_basic_authentication=>['harris.rhm@gmail.com/token', '6GB65xsrJb4V7HevT3xlbZUyquFNZtUn4POBvenm']).read)
+      begin
+        url = "https://harrisrhm.zendesk.com/api/v2/tickets.json"
+        clients_hash = JSON.parse(open(url, :http_basic_authentication=>['harris.rhm@gmail.com/token', '6GB65xsrJb4V7HevT3xlbZUyquFNZtUn4POBvenm']).read)
+      rescue OpenURI::HTTPError => error
+        puts "Data is not available"
+      end
     end
 
+    # filter and format json data into an array
     def transform
       results = []
       get_client["tickets"].each do |ticket|
@@ -27,6 +33,7 @@ class ZendeskService
       return results
     end
 
+    # paginate tickets and limit only 25 tickets per page 
     def paginate
         user_response = View.new().ask_user
         first_tab = "a"

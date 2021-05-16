@@ -17,7 +17,7 @@ class View
 
     def display_one(tickets)
       ask_user_for_id
-      puts "Invalid ticket" if @one_ticket > tickets.size
+      puts "Invalid ticket" if @one_ticket > tickets.size # ticket is invalid if id is not exist from api
 
       tickets.each do |ticket|
         if @one_ticket == ticket.ticket_id && @one_ticket <= tickets.size
