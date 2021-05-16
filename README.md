@@ -8,6 +8,8 @@ Welcome to a CLI-based tool that allows you to view support tickets from Zendesk
 
 The app is really simple: my company needs a quick ticket viewer, but I need to retrieve all of the tickets from my account via API. It'll connect to the Zendesk API, request all the tickets for my account, diplay and paginate them in `list`, and `show` individual ticket details.
 
+For better ilustration purposes, please have the Zendesk Ticket Viewer.pdf opened to see screenshots for terminal user interface and flows.
+
 
 
 ## Specs
