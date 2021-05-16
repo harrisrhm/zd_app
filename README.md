@@ -52,18 +52,23 @@ I created an app.rb in lieu of a complete MVC model that uses a framework such a
 
 When you are ready, you can test the program with:
 
-1) Run bundle install
+1) Copy the repository from my github and place into your preferred drive
+
+2) Ensure you have Ruby installed
+
+3) Run bundle install
 
 ```bash
 bundle install
 ```
 
-2) 
+4) Run the app
+
 ```bash
 ruby lib/app.rb
 ```
 
-3) Enjoy and follow the prompt in the terminal
+5) Enjoy and follow the prompt in the terminal
 
 
 ## Additional information
@@ -71,7 +76,9 @@ ruby lib/app.rb
 
 ### Test
 
-There are spec files I have written to test happy path. It is a very high level test that aims to ensure the application functions work as bare minimum. Test scope includes:
+There are spec files I have written to test happy path. It is a very high level test that aims to ensure the application functions work as bare minimum. However, the testing suite is still work in progress.
+
+Test scope includes:
 
 1) API connection
 2) JSON parse
@@ -90,9 +97,23 @@ Below are the gems I have utilised:
 --- gem "rake"
 --- gem "rspec"
 --- gem "open-uri"
---- gem "zendesk_api"
---- gem "kaminari"
+--- gem "zendesk_api" > only testing
+--- gem "kaminari" > only testing
 --- gem "will_paginate"
---- gem "pagy"
+--- gem "pagy" > only testing
 
 
+### Existing bugs
+
+-- Test suite that entails `rspec` and `rake` to function properly
+-- Error handling of API when it is unavailable
+
+
+### Performance and optimization
+
+For a small application, I believe there is a lot of room to optimize the time and space complexity. When running the application it takes slightly higher than average time to process. This is due to codes that are appearingly redundant and repetitive.  
+
+
+### Learning outcomes
+
+Throughly enjoyed building this simple application but most importantly learning a lot about overall approaches and application of small detail and steps to problem solving. From technical aspect, improving in writing plain Ruby, building a test suite, API calling and parsing, debugging and troubleshooting, pagination (mostly written in plain Ruby) and basic fundamentals of object oriented programming.
