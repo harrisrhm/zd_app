@@ -38,7 +38,7 @@ class Router
       puts "What would you like to do?"
       puts "1 - List all tickets"
       puts "2 - See individual ticket"
-      puts "3 - Stop and exit the program"
+      puts "3 - Exit the program"
       print "> "
     end
   end

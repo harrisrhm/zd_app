@@ -18,11 +18,11 @@ class ZendeskService
         subject = ticket["subject"]
         description = ticket["description"]
         created_date = ticket["created_at"]
+        parsed_date = Date.parse(created_date).strftime("%d %B %Y")
         created_time = ticket["created_at"]
-        # created_date = ticket["created_at"].strftime("%d %B %Y")
-        # created_time = ticket["created_at"].strftime("%H:%M%p")
+        parsed_time = Time.parse(created_time).strftime("%H:%M%p")
         status = ticket["status"]
-        results << Ticket.new(ticket_id: ticket_id, requester: requester, subject: subject, description: description, created_date: created_date, created_time: created_time, status: status)
+        results << Ticket.new(ticket_id: ticket_id, requester: requester, subject: subject, description: description, created_date: parsed_date, created_time: parsed_time, status: status)
       end
       return results
     end
